@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Limpar o terminal
+clear
+
 # Cores
 verde="\033[1;32m"
 azul="\033[1;34m"
