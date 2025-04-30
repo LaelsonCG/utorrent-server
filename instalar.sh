@@ -6,4 +6,10 @@ wget -O utorrent-server.zip https://raw.githubusercontent.com/LaelsonCG/utorrent
 unzip utorrent-server.zip &&
 sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5.13_amd64.deb &&
 wget -p /etc/systemd/system/utorrent-server.service https://raw.githubusercontent.com/LaelsonCG/utorrent-server/refs/heads/main/utorrent-server.service &&
-systemctl daemon-reload && systemctl enable utorrent-server
+systemctl daemon-reload && systemctl enable utorrent-server && service utorrent-server start &&
+
+# Obter o ipv4 da maquina
+ip = curl -4 ifconfig.net
+echo -e "\n\nACESSE: http://${ip}:8080/gui\n"
+echo -e "Usuario: admin\n"
+echo -e "Senha: Deixe vazio. Você pode definir uma senha pela interface gui"
