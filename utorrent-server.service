@@ -1,0 +1,15 @@
+[Unit]
+Description=Utorrent Server
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/utorrent-server/
+ExecStart=/opt/utorrent-server/utserver -settingspath /opt/utorrent-server/
+ExecStop=/usr/bin/pkill utserver
+Restart=always
+SyslogIdentifier=uTorrent Server
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
